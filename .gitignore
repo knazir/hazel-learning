@@ -29,6 +29,7 @@ x86/
 bld/
 [Bb]in/
 [Bb]in-[Ii]nt/
+[Ii]ntermediate/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
