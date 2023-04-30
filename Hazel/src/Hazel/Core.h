@@ -1,4 +1,5 @@
 #pragma once
+#include "hzpch.h"
 
 #ifdef HZ_PLATFORM_WINDOWS
 	#ifdef HZ_BUILD_DLL
