@@ -4,11 +4,11 @@
 
 extern Hazel::Application* Hazel::CreateApplication();
 
-int main(int argc, char** argv)
+int main(int32_t argc, char** argv)
 {
 	Hazel::Log::Init();
 	HZ_CORE_WARN("Initialized Log!");
-	int a = 5;
+	int32_t a = 5;
 	HZ_INFO("Hello! Var={0}", a);
 
 	Hazel::Application* app = Hazel::CreateApplication();

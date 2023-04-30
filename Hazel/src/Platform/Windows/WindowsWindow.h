@@ -14,8 +14,8 @@ public:
 
 	void OnUpdate() override;
 
-	inline unsigned int GetWidth() const override { return mData.Width; }
-	inline unsigned int GetHeight() const override { return mData.Height; }
+	inline uint32_t GetWidth() const override { return mData.Width; }
+	inline uint32_t GetHeight() const override { return mData.Height; }
 
 	// Window attributes
 	inline void SetEventCallback(const EventCallbackFn& callback) override { mData.EventCallback = callback; }
@@ -31,9 +31,9 @@ private:
 	struct WindowData
 	{
 		std::string Title;
-		unsigned int Width, Height;
+		uint32_t Width;
+		uint32_t Height;
 		bool VSync;
-
 		EventCallbackFn EventCallback;
 	};
 

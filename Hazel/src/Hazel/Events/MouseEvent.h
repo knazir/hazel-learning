@@ -57,21 +57,21 @@ private:
 class HAZEL_API MouseButtonEvent : public Event
 {
 public:
-	inline int GetMouseButton() const { return mButton; }
+	inline int32_t GetMouseButton() const { return mButton; }
 
 	EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
 protected:
-	MouseButtonEvent(int button)
+	MouseButtonEvent(int32_t button)
 		: mButton(button) {}
 
-	int mButton;
+	int32_t mButton;
 };
 
 class HAZEL_API MouseButtonPressedEvent : public MouseButtonEvent
 {
 public:
-	MouseButtonPressedEvent(int button)
+	MouseButtonPressedEvent(int32_t button)
 		: MouseButtonEvent(button) {}
 
 	std::string ToString() const override
@@ -87,7 +87,7 @@ public:
 class HAZEL_API MouseButtonReleasedEvent : public MouseButtonEvent
 {
 public:
-	MouseButtonReleasedEvent(int button)
+	MouseButtonReleasedEvent(int32_t button)
 		: MouseButtonEvent(button) {}
 
 	std::string ToString() const override

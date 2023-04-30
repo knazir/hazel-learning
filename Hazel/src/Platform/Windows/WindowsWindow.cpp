@@ -50,13 +50,13 @@ void WindowsWindow::Init(const WindowProps& props)
 		sGLFWInitialized = true;
 	}
 
-	mWindow = glfwCreateWindow((int)props.Width, (int)props.Height, mData.Title.c_str(), nullptr, nullptr);
+	mWindow = glfwCreateWindow(props.Width, props.Height, mData.Title.c_str(), nullptr, nullptr);
 	glfwMakeContextCurrent(mWindow);
 	glfwSetWindowUserPointer(mWindow, &mData);
 	SetVSync(true);
 
 	// Set GLFW callbacks
-	glfwSetWindowSizeCallback(mWindow, [](GLFWwindow* window, int width, int height)
+	glfwSetWindowSizeCallback(mWindow, [](GLFWwindow* window, int32_t width, int32_t height)
 		{
 			WindowData* data = static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 			HZ_CORE_ASSERT(data, "GLFW WindowData is null");
@@ -77,7 +77,7 @@ void WindowsWindow::Init(const WindowProps& props)
 			data->EventCallback(event);
 		});
 	
-	glfwSetKeyCallback(mWindow, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+	glfwSetKeyCallback(mWindow, [](GLFWwindow* window, int32_t key, int32_t scancode, int32_t action, int32_t mods)
 		{
 			WindowData* data = static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 			HZ_CORE_ASSERT(data, "GLFW WindowData is null");
@@ -105,7 +105,7 @@ void WindowsWindow::Init(const WindowProps& props)
 			}
 		});
 
-	glfwSetMouseButtonCallback(mWindow, [](GLFWwindow* window, int button, int action, int mods)
+	glfwSetMouseButtonCallback(mWindow, [](GLFWwindow* window, int32_t button, int32_t action, int32_t mods)
 		{
 			WindowData* data = static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 			HZ_CORE_ASSERT(data, "GLFW WindowData is null");
