@@ -16,6 +16,8 @@ IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
 
 include "Hazel/vendor/GLFW"
 
+startproject "Sandbox"
+
 project "Hazel"
     location "Hazel"
     kind "SharedLib"
@@ -49,7 +51,7 @@ project "Hazel"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "Off"
+        staticruntime "On"
         systemversion "latest"
 
         defines
@@ -65,14 +67,17 @@ project "Hazel"
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
+        buildoptions "/MD"
         symbols "On"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
+        buildoptions "/MD"
         symbols "On"
 
 project "Sandbox"
@@ -102,7 +107,7 @@ project "Sandbox"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "Off"
+        staticruntime "On"
         systemversion "latest"
 
         defines
@@ -112,12 +117,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
+        buildoptions "/MD"
         symbols "On"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
+        buildoptions "/MD"
         symbols "On"
